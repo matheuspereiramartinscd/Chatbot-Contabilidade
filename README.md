@@ -28,9 +28,9 @@ Este projeto implementa um chatbot contábil utilizando Flask para o backend e R
 3. **Configurar a API do OpenAI**: Certifique-se de substituir a chave da API do OpenAI no código Flask com a sua chave.
 4. **Instalar o Node.js e o NPM**: O React depende do Node.js e do NPM. Você pode baixá-los no [site oficial do Node.js](https://nodejs.org/).
 5. **Configurar a chave da api OpenIA**: Modifique o arquivo app.py e insira a sua chave da api  ```bashOpenIA
- ```bash   
-openai.api_key = ""
- ```
+    ```bash   
+   openai.api_key = ""
+    ```
 ### Rodando o Backend
 1. Clone o repositório.
 2. Navegue até a pasta do backend e execute:
