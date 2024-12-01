@@ -6,7 +6,7 @@ from flask_cors import CORS  # Importando o CORS
 app = Flask(__name__)
 
 # Configure a chave da API OpenAI
-openai.api_key = "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"
+openai.api_key = ""
 
 # Permitir CORS de todas as origens
 CORS(app, resources={r"/chat": {"origins": "*"}})
