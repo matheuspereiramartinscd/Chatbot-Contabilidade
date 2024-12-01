@@ -16,6 +16,7 @@
   color: white;
   padding: 20px;
   height: 100vh;
+  position: fixed;
 }
 
 .sidebar h2 {
@@ -38,10 +39,14 @@
 
 .chat-container {
   flex: 1;
+  margin-left: 250px;
+  /* Espaço para a sidebar */
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
@@ -54,7 +59,7 @@ h1 {
   border: 1px solid #ddd;
   padding: 10px;
   height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-bottom: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -69,7 +74,8 @@ h1 {
   padding: 8px;
   margin: 5px 0;
   border-radius: 5px;
-  max-width: 80%;
+  max-width: 70%;
+  /* Ajuste o máximo da largura */
 }
 
 .bot-msg {
@@ -78,7 +84,8 @@ h1 {
   padding: 8px;
   margin: 5px 0;
   border-radius: 5px;
-  max-width: 80%;
+  max-width: 70%;
+  /* Ajuste o máximo da largura */
   align-self: flex-end;
 }
 
@@ -91,12 +98,13 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 input[type="text"] {
   width: calc(100% - 120px);
-  /* Ajusta a largura para ocupar todo o espaço disponível */
+  /* Faz a caixa de texto ocupar todo o espaço disponível */
   padding: 10px;
   margin-right: 10px;
   border: 1px solid #ccc;
@@ -111,4 +119,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
   width: 100px;
+  /* Largura fixa para o botão */
+}
+
+button:hover {
+  background-color: #45a049;
 }

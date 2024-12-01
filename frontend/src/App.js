@@ -15,7 +15,12 @@ function App() {
     if (userInput.trim() === "") return; // Impede envio vazio
 
     setLoading(true); // Marca o carregamento
-    setChatHistory([...chatHistory, { sender: "Você", message: userInput }]); // Atualiza histórico com a entrada do usuário
+
+    // Adiciona a entrada do usuário no histórico de maneira assíncrona
+    setChatHistory(prevHistory => [
+      ...prevHistory,
+      { sender: "Você", message: userInput }
+    ]);
 
     try {
       // Envia a mensagem para o backend Flask
@@ -24,15 +29,15 @@ function App() {
       });
 
       // Atualiza o histórico com a resposta do chatbot
-      setChatHistory([
-        ...chatHistory,
+      setChatHistory(prevHistory => [
+        ...prevHistory,
         { sender: "Você", message: userInput },
         { sender: "Bot", message: response.data.response },
       ]);
     } catch (error) {
       console.error("Erro ao enviar a mensagem:", error);
-      setChatHistory([
-        ...chatHistory,
+      setChatHistory(prevHistory => [
+        ...prevHistory,
         { sender: "Bot", message: "Desculpe, ocorreu um erro." },
       ]);
     } finally {
@@ -47,8 +52,7 @@ function App() {
         <h2>Menu</h2>
         <ul>
           <li>Início</li>
-          <li>Histórico</li>
-          <li>Configurações</li>
+
         </ul>
       </div>
       <div className="chat-container">
